@@ -666,15 +666,15 @@ for (setting in ai2htmlBaseSettings) {
 // ================================================
 
 var nyt5Breakpoints = [
-	{ name:"xsmall"    , css: "g-show-xsmall", 		lowerLimit:  0, upperLimit: 180, artboards:[] },
-	{ name:"small"     , css: "g-show-small", 		lowerLimit:180, upperLimit: 300, artboards:[] },
-	{ name:"smallplus" , css: "g-show-smallplus", lowerLimit:300, upperLimit: 460, artboards:[] },
-	{ name:"textwidth" , css: "g-text-width", 		lowerLimit:460, upperLimit: 495, artboards:[] },
-	{ name:"submedium" , css: "g-show-submedium", lowerLimit:495, upperLimit: 600, artboards:[] },
-	{ name:"medium"    , css: "g-show-medium",    lowerLimit:600, upperLimit: 720, artboards:[] },
-	{ name:"large"     , css: "g-show-large",     lowerLimit:720, upperLimit: 945, artboards:[] },
-	{ name:"xlarge"    , css: "g-show-xlarge",    lowerLimit:945, upperLimit:1050, artboards:[] },
-	{ name:"xxlarge"   , css: "g-show-xxlarge",   lowerLimit:1050, upperLimit:1400, artboards:[] }
+	{ name:"xsmall"    , lowerLimit:   0 , upperLimit: 180 , artboards:[] },
+	{ name:"small"     , lowerLimit: 180 , upperLimit: 300 , artboards:[] },
+	{ name:"smallplus" , lowerLimit: 300 , upperLimit: 460 , artboards:[] },
+	{ name:"textwidth" , lowerLimit: 460 , upperLimit: 495 , artboards:[] },
+	{ name:"submedium" , lowerLimit: 495 , upperLimit: 600 , artboards:[] },
+	{ name:"medium"    , lowerLimit: 600 , upperLimit: 720 , artboards:[] },
+	{ name:"large"     , lowerLimit: 720 , upperLimit: 945 , artboards:[] },
+	{ name:"xlarge"    , lowerLimit: 945 , upperLimit:1050 , artboards:[] },
+	{ name:"xxlarge"   , lowerLimit:1050 , upperLimit:1600 , artboards:[] }
 ];
 var breakpoints        = {};
 breakpoints.min        = "";
@@ -1120,7 +1120,7 @@ if (doc.documentColorSpace!="DocumentColorSpace.RGB") {
 					var bpArtboard = nyt5Breakpoint.artboards[bpArtboardNumber];
 					if (abNumber==bpArtboard) {
 						showClass += (showClass.length>0) ? " ":"";
-						showClass += nyt5Breakpoint.css;
+						showClass += "g-show-" + nyt5Breakpoint.name;
 					}
 				}
 			}
